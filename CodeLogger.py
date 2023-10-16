@@ -1,6 +1,5 @@
 # Importing necessary modules
-import os
-import platform
+import os, platform, sys
 import time
 from pynput.keyboard import Key, Listener
 
@@ -49,14 +48,14 @@ def on_press(key):
 
 # Function to check key release event
 def on_release(key):
-    # If the 'Esc' key is pressed, stop logging and exit the program
-    if key == Key.esc:
-        return False
+    # If the 'Ctrl+Z' key combination is pressed, stop logging and exit the program
+    if key == Key.ctrl_z:
+        sys.exit()
 
 # Main function
 def main():
     print("Starting CodeLogger....")
-    print("Press 'Esc' to stop logging...")
+    print("Press 'Ctrl+Z' to stop logging...")
 
     # Checking OS type
     os_type = check_os()

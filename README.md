@@ -22,7 +22,7 @@ A Codelogger, also known as a keystroke logger, is a type of spyware that monito
 - `cd CodeLogger`
 - `pip install -r requirements.txt` or `pip3 install -r requirements.txt` 
 - `python3 codelogger.py` or `python codelogger.py`
-- Press `Esc` to stop logging.
+- Press `Ctrl + Z` to stop logging.
 - The logged data will be stored in `log.txt` file.
 
 ## Precautions
