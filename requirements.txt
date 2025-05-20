@@ -1,9 +1,6 @@
-os==0.1.0
-platform==1.0.8
-sys==0.0.1
-time==0.0.1
-pynput==1.7.4
-cryptography==3.4.8
-smtplib==0.0.1
-email==6.0.0a1
-threading==0.0.1
+pynput
+cryptography
+schedule
+pyautogui
+pyperclip
+psutil
