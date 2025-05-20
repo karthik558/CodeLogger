@@ -1,36 +1,87 @@
-# CodeLogger - Basically a Keylogger with different name
+# CodeLogger 2.0 - Advanced Monitoring Tool
 
 ![HEADER](src/codelogger.jpg)
 
-A Codelogger, also known as a keystroke logger, is a type of spyware that monitors and records what you type on your computer or mobile device12. Codelogger work by recording the interactions a user has with their keyboard, allowing someone to access a log of every email, instant message, search query, password, username, or other keyed sequences that a user types2. Codelogger record your keystrokes and send the data they capture back to hackers.
+CodeLogger 2.0 is a comprehensive monitoring tool that records keystrokes, captures screenshots, monitors clipboard activity, gathers system information, and sends reports via email. The tool uses encryption to secure collected data.
+
+> **DISCLAIMER**: This tool is for educational and legitimate security testing purposes only. Unauthorized monitoring of computers or devices without consent is illegal in most jurisdictions. Always obtain proper authorization before deployment.
+
+## Features
+
+- 🔑 **Keylogging**: Records all keyboard input
+- 📸 **Screenshot Capture**: Periodically captures screen images
+- 📋 **Clipboard Monitoring**: Tracks clipboard content changes
+- 🖥️ **System Information**: Collects hardware, network, and user details
+- 📧 **Email Reporting**: Automatically sends collected data to specified email
+- 🔒 **Encryption**: Secures logged data with PBKDF2 and Fernet encryption
+- ⏱️ **Scheduling**: Configurable intervals for data collection and reporting
 
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
+- [Installation](#installation)
 - [Usage](#usage)
+- [Folder Structure](#folder-structure)
 - [Precautions](#precautions)
 - [Contributing](#contributing)
 - [License](#license)
 
 ## Prerequisites
-- Install the following dependencies:
-  - Python 3
-  - Pynput Module (pip install pynput)
+
+- Python 3.6+
+- Required Python packages (see requirements.txt)
+
+## Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/karthik558/CodeLogger.git
+
+# Navigate to the project directory
+cd CodeLogger
+
+# Install dependencies
+pip install -r requirements.txt
+```
 
 ## Usage
-- `git clone https://github.com/karthik558/CodeLogger.git`
-- `cd CodeLogger`
-- `pip install -r requirements.txt` or `pip3 install -r requirements.txt` 
-- `python3 codelogger.py` or `python codelogger.py`
-- Press `Ctrl + Z` to stop logging.
-- The logged data will be stored in `log.txt` file.
+
+```bash
+# Run the main program
+python CodeLogger.py
+
+# To stop the program
+Press Ctrl+C in the terminal or Ctrl+Z (Command+Z on macOS) while typing
+```
+
+## Folder Structure
+
+When running CodeLogger, the following folder structure will be created:
+
+```
+CodeLogger/
+├── CodeLogger.py
+├── config.json
+├── codelogger.log      # Log file for program operations
+├── key.txt             # Keylog storage
+├── clipboard_history.txt # Clipboard monitoring storage
+├── screenshots/        # Directory for captured screenshots
+│   └── screenshot_YYYYMMDD_HHMMSS.png
+└── system_info/        # Directory for system information
+    └── system_info_YYYYMMDD_HHMMSS.json
+```
 
 ## Precautions
-This script is for educational purposes only and should not be used for any illegal activities. Please use this script only for educational purposes or with the explicit consent of the computer owner.
+
+- Always obtain proper authorization before deploying this tool
+- When using the email functionality, it's recommended to use app-specific passwords
+- Change the default encryption password and salt in the configuration
+- Be aware of privacy laws and regulations in your jurisdiction
 
 ## Contributing
-Contributions to the project are welcome. If you would like to suggest an improvement or report a bug, please open an issue or submit a pull request.
+
+Contributions to the project are welcome. Please feel free to submit a pull request or open an issue to suggest improvements or report bugs.
 
 ## License
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+This project is licensed under the [MIT License](LICENSE).
