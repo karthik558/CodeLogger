@@ -15,6 +15,9 @@ CodeLogger 2.0 is a comprehensive monitoring tool that records keystrokes, captu
 - 📧 **Email Reporting**: Automatically sends collected data to specified email
 - 🔒 **Encryption**: Secures logged data with PBKDF2 and Fernet encryption
 - ⏱️ **Scheduling**: Configurable intervals for data collection and reporting
+- 📊 **HTML Reports**: Creates beautiful HTML and text reports
+- 🧙‍♂️ **Configuration Wizard**: Easy setup with interactive prompts
+- 💻 **Command Line Interface**: Powerful CLI options for flexibility
 
 ## Table of Contents
 
@@ -50,9 +53,24 @@ pip install -r requirements.txt
 # Run the main program
 python CodeLogger.py
 
+# Run with configuration wizard
+python CodeLogger.py --config
+
+# Generate a report without starting monitoring
+python CodeLogger.py --report-only
+
+# Check the status of CodeLogger services
+python CodeLogger.py --status
+
+# Decrypt a file encrypted by CodeLogger
+python CodeLogger.py --decrypt path/to/encrypted_file
+
+# Show version information
+python CodeLogger.py --version
+```
+
 # To stop the program
 Press Ctrl+C in the terminal or Ctrl+Z (Command+Z on macOS) while typing
-```
 
 ## Folder Structure
 
@@ -61,14 +79,18 @@ When running CodeLogger, the following folder structure will be created:
 ```
 CodeLogger/
 ├── CodeLogger.py
-├── config.json
-├── codelogger.log      # Log file for program operations
-├── key.txt             # Keylog storage
-├── clipboard_history.txt # Clipboard monitoring storage
-├── screenshots/        # Directory for captured screenshots
-│   └── screenshot_YYYYMMDD_HHMMSS.png
-└── system_info/        # Directory for system information
-    └── system_info_YYYYMMDD_HHMMSS.json
+├── config.json          # Configuration file
+├── output/              # Main output directory
+│   ├── codelogger.log   # Log file for program operations
+│   ├── key.txt          # Keylog storage
+│   ├── clipboard_history.txt # Clipboard monitoring storage
+│   ├── screenshots/     # Directory for captured screenshots
+│   │   └── screenshot_YYYYMMDD_HHMMSS.png
+│   ├── system_info/     # Directory for system information
+│   │   └── system_info_YYYYMMDD_HHMMSS.json
+│   └── reports/         # Directory for generated reports
+│       ├── report_YYYYMMDD_HHMMSS.html
+│       └── report_YYYYMMDD_HHMMSS.txt
 ```
 
 ## Precautions
